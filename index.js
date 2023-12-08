@@ -4,12 +4,13 @@ const { userRouter } = require('./routes/user.routes')
 const { noteRouter } = require('./routes/note.routes')
 const cors = require('cors')
 
-app.use(cors())
 const app = express()
 app.use(express.json())
+app.use(cors())
+
+
 app.use('/users', userRouter)
 app.use('/notes', noteRouter)
-
 
 app.listen(8000, async()=>{
     try {
